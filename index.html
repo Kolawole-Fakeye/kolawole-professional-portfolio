@@ -3,105 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kolawole Afolabi Fakeye | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+    <title>Kolawole Afolabi Fakeye | Principal Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --brand: #004a99; --accent: #ffd700; --bg: #fdfdfd; }
-        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; }
-        
-        /* Navigation Bar */
-        nav { 
-            background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
-            padding: 15px 10%; display: flex; justify-content: space-between; 
-            position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #eee;
+        :root { --bg: #050505; --text: #ffffff; --accent: #3b82f6; --muted: #888888; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+        /* Sleek Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 30px 8%; background: rgba(5,5,5,0.8); backdrop-filter: blur(20px);
         }
-        nav a { text-decoration: none; color: #555; font-weight: 500; margin-left: 25px; transition: 0.3s; }
-        nav a:hover { color: var(--brand); }
+        .logo { font-weight: 900; letter-spacing: -1px; font-size: 1.2rem; }
+        .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.8rem; font-weight: 600; margin-left: 30px; transition: 0.3s; text-transform: uppercase; letter-spacing: 2px; }
+        .nav-links a:hover { color: var(--text); }
 
-        /* Multi-page Section Feel */
-        section { padding: 80px 15%; min-height: 60vh; }
-        .hero { 
-            background: linear-gradient(rgba(0,74,153,0.9), rgba(0,74,153,0.9)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1500&q=80'); 
-            background-size: cover; color: white; text-align: center; clip-path: ellipse(150% 100% at 50% 0%);
+        /* Hero: The "New York" Aesthetic */
+        section.hero {
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 10%;
+            border-bottom: 1px solid #222;
         }
+        .hero h1 { font-size: clamp(3.5rem, 12vw, 8rem); font-weight: 900; line-height: 0.85; letter-spacing: -0.06em; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; color: var(--muted); max-width: 500px; font-weight: 300; letter-spacing: 0.05em; }
 
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; }
+        .container { padding: 120px 10%; }
+        .section-header { font-size: 0.7rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 20px; display: block; }
         
-        h1 { font-size: 3.5rem; margin-bottom: 10px; font-weight: 800; letter-spacing: -1px; }
-        h2 { color: var(--brand); font-size: 2rem; margin-bottom: 20px; }
-        .tag { background: #eef5ff; color: var(--brand); padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-right: 10px; }
+        /* Grid Layouts */
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        
+        .exp-box { border-top: 1px solid #222; padding-top: 30px; margin-bottom: 50px; }
+        .exp-box h3 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
+        .exp-box span { color: var(--accent); font-weight: 700; font-size: 0.8rem; }
+        .exp-box p { color: var(--muted); margin-top: 15px; font-size: 1.1rem; }
 
-        footer { background: #111; color: white; padding: 40px 10%; text-align: center; }
+        /* Project Cards */
+        .project-card {
+            background: #0f0f0f; padding: 60px; border-radius: 4px; border: 1px solid #1a1a1a;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .project-card:hover { border-color: var(--accent); transform: translateY(-10px); background: #111; }
+        .project-card h4 { font-size: 2rem; margin-bottom: 20px; }
+        
+        .philosophy-section { background: #fff; color: #000; padding: 150px 10%; }
+        .philosophy-section h2 { font-size: 4rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 30px; }
+
+        footer { padding: 60px 10%; background: #000; border-top: 1px solid #111; text-align: center; color: #444; font-size: 0.8rem; letter-spacing: 2px; }
+
+        @media (max-width: 900px) { .grid { grid-template-columns: 1fr; gap: 40px; } .hero h1 { font-size: 4rem; } }
     </style>
 </head>
 <body>
 
 <nav>
-    <div style="font-weight: 800; color: var(--brand);">KAF</div>
-    <div>
+    <div class="logo">K. FAKEYE</div>
+    <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#philosophy">Philosophy</a>
+        <a href="#experience">History</a>
+        <a href="#projects">Work</a>
+        <a href="#philosophy">Core</a>
     </div>
 </nav>
 
 <section class="hero">
-    <h1>Kolawole Afolabi Fakeye</h1>
-    <p style="font-size: 1.2rem; opacity: 0.9;">I.T. Systems Engineer & Data Solutions Architect</p>
-    <p>B.Sc. Electronic & Computer Engineering | Lagos State University (2004)</p>
+    <span class="section-header">Based in Agbara, Lagos</span>
+    <h1>Systems<br>Integration<br>Architect.</h1>
+    <p>Senior Engineer specializing in infrastructure lifecycle, network integrity, and advanced data storytelling.</p>
 </section>
 
-<section id="about">
-    <h2>Professional Summary</h2>
-    <p>Senior Engineer with nearly two decades of expertise in infrastructure, networking, and digital transformation. My career spans from early technical roles at Digital Works (2006) to high-level advisory and systems administration, now integrating SQL and Python for advanced operational reporting.</p>
-</section>
-
-<section id="experience" style="background: #f4f7fa;">
-    <h2>Career Milestones</h2>
-    <div class="card">
-        <h3>Senior I.T. Engineer & Systems Admin</h3>
-        <p>Current focus on hardware lifecycle, network integrity, and data-driven insights.</p>
-    </div>
-    <div class="card" style="margin-top: 20px;">
-        <h3>Entrepreneurial Leadership (2020 - 2025)</h3>
-        <p>Operational management and logistics for a retail enterprise, showcasing adaptable business leadership.</p>
-    </div>
-    <div class="card" style="margin-top: 20px;">
-        <h3>P.A. to the Director General (Ended 2020)</h3>
-        <p>Strategic administrative coordination and high-level project oversight.</p>
-    </div>
-</section>
-
-<section id="projects">
-    <h2>Enterprise Case Studies</h2>
-    <div class="card-grid">
-        <div class="card">
-            <h3>NRS Revenue Analysis</h3>
-            <p>Architecting reporting frameworks for national revenue tracking.</p>
-            <span class="tag">SQL</span><span class="tag">EXCEL</span>
+<section class="container" id="about">
+    <div class="grid">
+        <div>
+            <span class="section-header">Professional Identity</span>
+            <h2 style="font-size: 3rem; font-weight: 700; line-height: 1;">20 years of Engineering Excellence.</h2>
         </div>
-        <div class="card">
-            <h3>Maersk Logistics</h3>
-            <p>Visualizing supply chain movements for global logistics efficiency.</p>
-            <span class="tag">DATA VISUALIZATION</span>
-        </div>
-        <div class="card">
-            <h3>Media Hub Station</h3>
-            <p>Concept design for a 24/7 social impact and lifestyle live-streaming station.</p>
-            <span class="tag">BROADCAST I.T.</span>
+        <div>
+            <p style="color: var(--muted); font-size: 1.2rem;">With a foundation built in 2004 at LASU, my career has evolved from pure hardware engineering at <strong>Digital Works (2006)</strong> to high-stakes administrative coordination and entrepreneurial leadership. Today, I bridge the gap between technical infrastructure and data-driven decision making.</p>
         </div>
     </div>
 </section>
 
-<section id="philosophy">
-    <h2>Professional Philosophy</h2>
-    <p>Dedicated to <strong>Africapitalism</strong>—the belief that the private sector is the key to unlocking Africa's economic potential through social impact and sustainable wealth creation.</p>
+<section class="container" id="experience">
+    <span class="section-header">The Timeline</span>
+    <div class="grid">
+        <div class="exp-box">
+            <span>2025 — ACTIVE</span>
+            <h3>Data Analytics</h3>
+            <p>Mastering SQL, Python, and advanced Excel to transform raw metrics into operational intelligence.</p>
+        </div>
+        <div class="exp-box">
+            <span>2020 — 2025</span>
+            <h3>Business Ops</h3>
+            <p>Managed complex retail logistics and enterprise-level business operations.</p>
+        </div>
+        <div class="exp-box">
+            <span>PRE-2020</span>
+            <h3>State Service</h3>
+            <p>PA to the Director General, overseeing strategic government project lifecycles.</p>
+        </div>
+        <div class="exp-box">
+            <span>2004 — 2006</span>
+            <h3>The Start</h3>
+            <p>B.Sc. Electronic & Computer Engineering. Systems deployment at Digital Works.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container" id="projects">
+    <span class="section-header">Featured Case Studies</span>
+    <div class="grid">
+        <div class="project-card">
+            <h4>NRS Revenue Framework</h4>
+            <p style="color: var(--muted);">Data-driven fiscal reporting and revenue optimization systems.</p>
+        </div>
+        <div class="project-card">
+            <h4>Maersk Supply Chain</h4>
+            <p style="color: var(--muted);">Visualizing global logistics data for maximum operational clarity.</p>
+        </div>
+        <div class="project-card">
+            <h4>Media Hub Station</h4>
+            <p style="color: var(--muted);">Conceptualizing 15-camera live broadcast infrastructure for social impact.</p>
+        </div>
+    </div>
+</section>
+
+<section class="philosophy-section" id="philosophy">
+    <span class="section-header" style="color: #666;">The Mindset</span>
+    <h2>Africapitalism.</h2>
+    <p style="font-size: 1.5rem; max-width: 700px;">The belief that Africa’s private sector can and must be the primary driver of the continent’s social and economic transformation. Wealth creation through technical integrity.</p>
 </section>
 
 <footer>
-    <p>© 2026 Kolawole Afolabi Fakeye | Agbara, Lagos</p>
+    © 2026 KOLAWOLE AFOLABI FAKEYE | SYSTEMS ENGINEER
 </footer>
 
 </body>
