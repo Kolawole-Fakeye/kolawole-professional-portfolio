@@ -3,46 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kolawole Afolabi Fakeye | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <title>Kolawole Afolabi Fakeye | Expert Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        body { background-color: #f4f7f6; color: #333; padding-top: 50px; }
-        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        h1 { color: #1a5276; font-weight: bold; border-bottom: 3px solid #1a5276; display: inline-block; }
-        .section-title { color: #1a5276; text-transform: uppercase; letter-spacing: 1px; margin-top: 30px; border-bottom: 1px solid #ddd; }
-        .links a { margin-right: 15px; color: #1a5276; text-decoration: none; font-weight: bold; }
-        .links a:hover { text-decoration: underline; }
+        :root { --primary: #1a5276; --secondary: #f39c12; --light: #ecf0f1; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light); margin: 0; overflow-x: hidden; }
+        
+        /* Moving Header Area */
+        .hero { 
+            background: linear-gradient(135deg, var(--primary) 0%, #2980b9 100%); 
+            color: white; padding: 100px 20px; text-align: center; 
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+        
+        .animate-title { display: inline-block; animation: fadeInUp 1.5s; }
+        
+        .container { max-width: 1000px; margin: -50px auto 50px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        /* Card Style for Projects */
+        .project-card { 
+            border-left: 5px solid var(--secondary); background: #f9f9f9; 
+            padding: 20px; margin: 20px 0; transition: transform 0.3s ease; 
+            cursor: pointer; border-radius: 5px;
+        }
+        .project-card:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        .btn { 
+            background: var(--secondary); color: white; padding: 12px 25px; 
+            text-decoration: none; border-radius: 25px; font-weight: bold; 
+            display: inline-block; margin: 10px; transition: 0.3s;
+        }
+        .btn:hover { background: #d35400; transform: translateY(-3px); }
+
+        /* Moving Letters Animation */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
 
+<section class="hero">
+    <h1 class="animate-title">KOLAWOLE AFOLABI FAKEYE</h1>
+    <p class="animate-title" style="display:block; animation-delay: 0.5s;">Senior I.T. Engineer | Systems Administrator | Data Analyst</p>
+    <div style="margin-top:20px;">
+        <a href="#" class="btn">View My CV</a>
+        <a href="#" class="btn" style="background:transparent; border: 2px solid white;">Contact Me</a>
+    </div>
+</section>
+
 <div class="container">
-    <header>
-        <h1>Kolawole Afolabi Fakeye</h1>
-        <p><strong>I.T. Engineer & Systems Administrator</strong> | B.Sc. Electronic & Computer Engineering (2004)</p>
-        <div class="links">
-            <a href="https://linkedin.com/in/YOUR-PROFILE">LinkedIn</a>
-            <a href="https://github.com/kolawoleafolabi">GitHub</a>
-            <a href="mailto:your-email@example.com">Email Me</a>
-        </div>
-    </header>
+    <h2 style="color: var(--primary);">Professional Experience</h2>
+    <div class="project-card">
+        <h3>National Revenue Service (NRS) Project</h3>
+        <p>Implementation of advanced data analysis and technical reporting frameworks.</p>
+    </div>
 
-    <h5 class="section-title">Professional Summary</h5>
-    <p>Senior I.T. Engineer with over 20 years of experience in systems administration, hardware deployment, and data analysis. Recently transitioned into advanced data analytics (SQL, Excel, Python) for operational reporting.</p>
+    <div class="project-card">
+        <h3>Maersk Logistics Analysis</h3>
+        <p>Optimizing supply chain visibility through data-driven insights.</p>
+    </div>
 
-    <h5 class="section-title">Technical Projects</h5>
-    <ul>
-        <li><strong>NRS Revenue Analysis:</strong> Developed a structured technical reporting system for national revenue services.</li>
-        <li><strong>Maersk Logistics Tracking:</strong> Visualized supply chain data for operational efficiency.</li>
-        <li><strong>Media Hub Concept:</strong> Architected a 24/7 live-streaming lifestyle broadcasting hub.</li>
-    </ul>
-
-    <h5 class="section-title">Experience</h5>
-    <p><strong>Systems Administrator / I.T. Engineer</strong> (Present)<br>
-    Managing hardware lifecycle and enterprise network infrastructure.</p>
-    
-    <p><strong>Entrepreneur / Business Manager</strong> (2020 - 2025)<br>
-    Managed retail operations and business logistics.</p>
+    <h2 style="color: var(--primary);">Skills & Expertise</h2>
+    <p><strong>Cloud Systems | Networking | SQL | Microsoft Excel | Hardware Integration</strong></p>
 </div>
 
 </body>
