@@ -3,71 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kolawole Afolabi Fakeye | Expert Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Kolawole Afolabi Fakeye | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #1a5276; --secondary: #f39c12; --light: #ecf0f1; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light); margin: 0; overflow-x: hidden; }
+        :root { --brand: #004a99; --accent: #ffd700; --bg: #fdfdfd; }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; }
         
-        /* Moving Header Area */
+        /* Navigation Bar */
+        nav { 
+            background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
+            padding: 15px 10%; display: flex; justify-content: space-between; 
+            position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #eee;
+        }
+        nav a { text-decoration: none; color: #555; font-weight: 500; margin-left: 25px; transition: 0.3s; }
+        nav a:hover { color: var(--brand); }
+
+        /* Multi-page Section Feel */
+        section { padding: 80px 15%; min-height: 60vh; }
         .hero { 
-            background: linear-gradient(135deg, var(--primary) 0%, #2980b9 100%); 
-            color: white; padding: 100px 20px; text-align: center; 
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+            background: linear-gradient(rgba(0,74,153,0.9), rgba(0,74,153,0.9)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1500&q=80'); 
+            background-size: cover; color: white; text-align: center; clip-path: ellipse(150% 100% at 50% 0%);
         }
-        
-        .animate-title { display: inline-block; animation: fadeInUp 1.5s; }
-        
-        .container { max-width: 1000px; margin: -50px auto 50px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        
-        /* Card Style for Projects */
-        .project-card { 
-            border-left: 5px solid var(--secondary); background: #f9f9f9; 
-            padding: 20px; margin: 20px 0; transition: transform 0.3s ease; 
-            cursor: pointer; border-radius: 5px;
-        }
-        .project-card:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-        .btn { 
-            background: var(--secondary); color: white; padding: 12px 25px; 
-            text-decoration: none; border-radius: 25px; font-weight: bold; 
-            display: inline-block; margin: 10px; transition: 0.3s;
-        }
-        .btn:hover { background: #d35400; transform: translateY(-3px); }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; }
+        
+        h1 { font-size: 3.5rem; margin-bottom: 10px; font-weight: 800; letter-spacing: -1px; }
+        h2 { color: var(--brand); font-size: 2rem; margin-bottom: 20px; }
+        .tag { background: #eef5ff; color: var(--brand); padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-right: 10px; }
 
-        /* Moving Letters Animation */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        footer { background: #111; color: white; padding: 40px 10%; text-align: center; }
     </style>
 </head>
 <body>
 
+<nav>
+    <div style="font-weight: 800; color: var(--brand);">KAF</div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#philosophy">Philosophy</a>
+    </div>
+</nav>
+
 <section class="hero">
-    <h1 class="animate-title">KOLAWOLE AFOLABI FAKEYE</h1>
-    <p class="animate-title" style="display:block; animation-delay: 0.5s;">Senior I.T. Engineer | Systems Administrator | Data Analyst</p>
-    <div style="margin-top:20px;">
-        <a href="#" class="btn">View My CV</a>
-        <a href="#" class="btn" style="background:transparent; border: 2px solid white;">Contact Me</a>
+    <h1>Kolawole Afolabi Fakeye</h1>
+    <p style="font-size: 1.2rem; opacity: 0.9;">I.T. Systems Engineer & Data Solutions Architect</p>
+    <p>B.Sc. Electronic & Computer Engineering | Lagos State University (2004)</p>
+</section>
+
+<section id="about">
+    <h2>Professional Summary</h2>
+    <p>Senior Engineer with nearly two decades of expertise in infrastructure, networking, and digital transformation. My career spans from early technical roles at Digital Works (2006) to high-level advisory and systems administration, now integrating SQL and Python for advanced operational reporting.</p>
+</section>
+
+<section id="experience" style="background: #f4f7fa;">
+    <h2>Career Milestones</h2>
+    <div class="card">
+        <h3>Senior I.T. Engineer & Systems Admin</h3>
+        <p>Current focus on hardware lifecycle, network integrity, and data-driven insights.</p>
+    </div>
+    <div class="card" style="margin-top: 20px;">
+        <h3>Entrepreneurial Leadership (2020 - 2025)</h3>
+        <p>Operational management and logistics for a retail enterprise, showcasing adaptable business leadership.</p>
+    </div>
+    <div class="card" style="margin-top: 20px;">
+        <h3>P.A. to the Director General (Ended 2020)</h3>
+        <p>Strategic administrative coordination and high-level project oversight.</p>
     </div>
 </section>
 
-<div class="container">
-    <h2 style="color: var(--primary);">Professional Experience</h2>
-    <div class="project-card">
-        <h3>National Revenue Service (NRS) Project</h3>
-        <p>Implementation of advanced data analysis and technical reporting frameworks.</p>
+<section id="projects">
+    <h2>Enterprise Case Studies</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>NRS Revenue Analysis</h3>
+            <p>Architecting reporting frameworks for national revenue tracking.</p>
+            <span class="tag">SQL</span><span class="tag">EXCEL</span>
+        </div>
+        <div class="card">
+            <h3>Maersk Logistics</h3>
+            <p>Visualizing supply chain movements for global logistics efficiency.</p>
+            <span class="tag">DATA VISUALIZATION</span>
+        </div>
+        <div class="card">
+            <h3>Media Hub Station</h3>
+            <p>Concept design for a 24/7 social impact and lifestyle live-streaming station.</p>
+            <span class="tag">BROADCAST I.T.</span>
+        </div>
     </div>
+</section>
 
-    <div class="project-card">
-        <h3>Maersk Logistics Analysis</h3>
-        <p>Optimizing supply chain visibility through data-driven insights.</p>
-    </div>
+<section id="philosophy">
+    <h2>Professional Philosophy</h2>
+    <p>Dedicated to <strong>Africapitalism</strong>—the belief that the private sector is the key to unlocking Africa's economic potential through social impact and sustainable wealth creation.</p>
+</section>
 
-    <h2 style="color: var(--primary);">Skills & Expertise</h2>
-    <p><strong>Cloud Systems | Networking | SQL | Microsoft Excel | Hardware Integration</strong></p>
-</div>
+<footer>
+    <p>© 2026 Kolawole Afolabi Fakeye | Agbara, Lagos</p>
+</footer>
 
 </body>
 </html>
